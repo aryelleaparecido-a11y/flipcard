@@ -1,0 +1,152 @@
+/* Importando uma fonte super fofa e arredondada do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fcebeb; /* Fundo Rosa Bebê bem delicado */
+    font-family: 'Fredoka', 'Quicksand', sans-serif; /* Fonte super fofa */
+    color: #6d4c41; /* Um marrom suave em vez de preto, bem estilo coquette */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+/* Cabeçalho Coquette */
+.cabecalho {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.7); /* Fundo branco transparente */
+    backdrop-filter: blur(5px);
+    border-bottom: 2px dashed #ffb7c5;
+}
+
+.cabecalho h1 {
+    color: #ff8a9e;
+    font-size: 26px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.cabecalho nav a {
+    color: #ff8a9e;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.cabecalho nav a:hover {
+    background-color: #ffccd5;
+    color: #fff;
+}
+
+/* Conteúdo Principal */
+main {
+    text-align: center;
+    padding: 40px 20px;
+    flex: 1;
+}
+
+main h2 {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #ff8a9e;
+}
+
+/* --- CONTAINER DO CARTÃO (Tamanho Médio) --- */
+.cartao {
+    width: 280px;  /* Tamanho médio perfeito */
+    height: 360px;
+    perspective: 1000px;
+    margin: 0 auto;
+}
+
+.cartao-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito suave */
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.cartao:hover .cartao-interno {
+    transform: rotateY(180deg);
+}
+
+/* Estilo das Faces do Cartão */
+.cartao-frente, .cartao-verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 183, 197, 0.4); /* Sombra rosinha */
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #ffccd5;
+}
+
+/* Elemento do Laço Coquette nas Imagens */
+.cartao-frente::before, .cartao-verso::before {
+    content: '🎀'; /* Um laço fofinho bem em cima da imagem */
+    position: absolute;
+    top: 10px;
+    font-size: 28px;
+    z-index: 10;
+    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1));
+}
+
+.cartao-verso {
+    transform: rotateY(180deg);
+    background-color: #fff5f6; /* Verso ligeiramente diferente */
+    border-color: #ff8a9e;
+}
+
+/* Imagens (Tamanho Médio e Ajustadas) */
+.cartao-imagem {
+    width: 100%;
+    height: 220px; /* Altura média para destacar a foto */
+    object-fit: cover;
+    border-radius: 15px;
+    border: 2px solid #ffe3e8;
+}
+
+/* Textos dos Cartões */
+.cartao-frente p, .cartao-verso p {
+    margin-top: auto;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.cartao-frente p {
+    color: #e57373;
+}
+
+.cartao-verso p {
+    color: #ff6b8b;
+    font-weight: 700;
+}
+
+/* Rodapé */
+.rodape {
+    padding: 20px;
+    color: #ff8a9e;
+    font-size: 15px;
+    font-weight: bold;
+}
